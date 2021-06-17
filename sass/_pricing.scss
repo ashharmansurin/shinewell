@@ -1,0 +1,49 @@
+
+
+.pricing_table{
+    width:100%;
+    padding:5rem 0 10rem 0;
+    position: relative;
+    .pricing_container{
+        width:85vw;
+        margin:0 auto;
+        .heading{
+            text-align: center;
+            h1{
+                color:white;
+                font-size:4rem;
+              font-weight: 700;
+            }
+        }
+        .pricing_card_wrapper{
+
+            margin-top:4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            grid-gap:3rem;
+            position: relative;
+            z-index: 1;
+            .pricing_card1{
+               @include pricing_card(orange,orange,rgb(241, 185, 81));
+               box-shadow: 5px 5px 15px 0px rgb(0 0 0 / 30%);
+            }
+            .pricing_card2{
+                @include pricing_card($royalorange,$royalorange,rgb(226, 152, 14));
+                box-shadow: 5px 5px 15px 0px rgb(0 0 0 / 30%);
+             }
+             .pricing_card3{
+                @include pricing_card(#2dcea4,
+                #2dcea4,
+                #54e4bd);
+                box-shadow: 5px 5px 15px 0px rgb(0 0 0 / 30%);
+             }
+             .service_pricing_card{
+                 &:hover{
+                     transform:translateY(-2rem);
+                 }
+             }
+            
+        }
+    }
+    
+}

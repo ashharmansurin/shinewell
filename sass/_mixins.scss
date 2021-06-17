@@ -1,0 +1,210 @@
+@mixin btns($bg,$color){
+                display: inline-block;
+                background: $bg;
+                font-size:1.6rem!important;
+                padding: .8rem 1.5rem;
+                color: $color!important;
+}
+
+@mixin cir($wid,$height){
+    width:$wid;
+    height:$height;
+    background:#f4a4607a;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+@mixin rounded_btn($bg_color,$m_color){
+    
+    display: inline-block;
+    padding:.5rem 1.5rem;
+    text-transform: uppercase;
+     background-color:$bg_color;
+    color:$m_color;
+    font-size:1.3rem;
+    border-radius: 2rem;
+     margin-right:1.5rem;
+     letter-spacing: 1px;
+}
+
+
+@mixin top_img($bg_color){
+    background: $bg_color;
+    padding: 2rem;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 7rem;
+    margin: 0 auto;
+    transition: all .3s linear;
+}
+@mixin link_btn($color){
+         display: inline-block;
+        font-size: 1.4rem;
+        font-weight: 700;
+         margin-top: 1.6rem;
+         color:$color;
+         text-transform: uppercase;
+         &:hover{
+             i{
+                 transform:translateX(2rem);
+                 transition: all .3s ease-in-out;
+             }
+         }
+
+         i{
+            transition: all .3s ease-in-out;
+        }
+}
+
+@mixin vertical_card_property(){
+              display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 2rem;
+             box-shadow: 0px 0px 10px 5px lightgrey;
+            transition:transform .3s;
+             .vertical_card_body {
+                margin-left: 1.5rem;
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 800;
+                    color:$main_txt;
+                  
+                }
+                p {
+                    font-size: 1.5rem;
+                    margin-top: .8rem;
+                    color: gray;
+                }
+            }
+
+}
+
+@mixin col2($col_bg,$mr-top){
+    width:100%;
+    margin-top:$mr-top;
+    background:$col_bg;
+}
+
+@mixin team-cards($i_bg_color){
+    cursor: pointer;
+    &:hover img{
+        transform: scale(1.1);
+    }
+  
+    .team_img{
+        width:100%;
+        height:20rem;
+        position: relative;
+        overflow: hidden;
+        .social_moving_icon{
+            position: absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            width:100%;
+            height:100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 2rem;
+            transform:translateY(5rem);
+            transition: transform .3s linear;
+            i {
+                text-align: center;
+                background:$i_bg_color;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 1rem;
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+        img{
+            width:100%;
+            height:100%;
+            border-radius: 1rem;
+            transition: transform .3s linear;
+        }
+       
+    }
+    .team_body {
+        text-align: center;
+        h2 {
+            margin: 2rem 0 1rem 0;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: gray;
+        }
+        p {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            color: gray;
+        }
+    }
+    &:hover h2{
+        color:$royalorange;
+    }
+    &:hover .social_moving_icon{
+        transform: translateY(0rem);
+    }
+}
+
+@mixin pricing_card($price_head_bg,$first_bg,$second_bg) {
+    text-align:center;
+    border-radius: 2rem;
+    margin:2rem;
+    transition:all .4s linear;
+    .pricing_head{
+        width:100%;
+        height:20rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $price_head_bg;
+        color:white;
+        display: flex;
+       flex-direction: column;
+        justify-content: center;
+        i{
+            font-size:3.9rem;
+        }
+        h2{
+            font-size:3.4rem;
+            margin-top:1rem;
+        }
+    }
+    
+    .pricing_body{
+        background-color: white;
+        padding: 2rem;
+        .pricing_list {
+          
+
+            li {
+                margin-bottom: 1.9rem;
+
+                a {
+                    font-size: 1.5rem;
+                    color: gray;
+                    font-weight: 800;
+                }
+            }
+        }
+        .get_started{
+            @include btns($first_bg,$second_bg);
+            color: white!important;
+        }
+    }
+}
+
